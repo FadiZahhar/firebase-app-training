@@ -12,20 +12,16 @@ jobs:
       REACT_APP_MEASUREMENT_ID: "${{ secrets.REACT_APP_MEASUREMENT_ID }}"
     runs-on: ubuntu-latest
     steps: 
-      - 
-        uses: actions/checkout@v2
-      - 
-        run: "npm install"
-      - 
-        run: "npm run build"
-      - 
-        uses: FirebaseExtended/action-hosting-deploy@v0
+      - uses: actions/checkout@v2
+      - run: "npm install"
+      - run: "npm run build"
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with: 
           channelId: live
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_FIR_RECIPES_EABA0 }}"
           projectId: fir-recipes-eaba0
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-name: "Deploy to Firebase Hosting on merge"
+          name: "Deploy to Firebase Hosting on merge"
 ? "on"
 : 
   push: 
