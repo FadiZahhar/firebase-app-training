@@ -1,4 +1,4 @@
-import firebae from './FirebaseConfig';
+import firebase from './FirebaseConfig';
 
 const auth = firebase.auth();
 
@@ -21,7 +21,7 @@ const sendPasswordResetEmail = (email) => {
 const loginWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider;
 
-    return google.auth.signInWithPopup(provider);
+    return auth.signInWithPopup(provider);
 }
 
 const subscribeToAuthChanges = (handleAuthChange) => {
